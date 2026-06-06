@@ -1,0 +1,396 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vibecodingturkey.com/data/ai-kodlama-araclari-benchmark-2026/schema.json",
+  "title": "AI Kodlama Araçları Benchmark 2026 Schema",
+  "description": "Schema for the Vibe Coding Turkey AI coding tools benchmark scaffold. Public CSV files use the same column names as the object properties in this schema.",
+  "type": "object",
+  "required": ["dataset_id", "version", "tasks", "tools", "score_weights", "runs", "results"],
+  "properties": {
+    "dataset_id": {
+      "type": "string",
+      "const": "vct-ai-kodlama-araclari-benchmark-2026"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(-[a-z0-9.-]+)?$"
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/task"
+      }
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/tool"
+      }
+    },
+    "score_weights": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/score_weight"
+      }
+    },
+    "runs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/run"
+      }
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/result"
+      }
+    }
+  },
+  "$defs": {
+    "score_0_100": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "task": {
+      "type": "object",
+      "required": [
+        "task_id",
+        "task_title_tr",
+        "task_title_en",
+        "category",
+        "difficulty",
+        "prompt_locale",
+        "primary_stack",
+        "fixture_uri",
+        "rubric_uri",
+        "timeout_minutes",
+        "max_attempts",
+        "success_definition",
+        "status"
+      ],
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "pattern": "^VCT-2026-[A-Z]+-[0-9]{2}$"
+        },
+        "task_title_tr": {
+          "type": "string"
+        },
+        "task_title_en": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["frontend", "backend", "fullstack", "testing", "database", "localization", "agentic-refactor", "debug-deploy"]
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": ["easy", "medium", "hard"]
+        },
+        "prompt_locale": {
+          "type": "string",
+          "enum": ["tr", "en", "mixed"]
+        },
+        "primary_stack": {
+          "type": "string"
+        },
+        "fixture_uri": {
+          "type": "string"
+        },
+        "rubric_uri": {
+          "type": "string"
+        },
+        "timeout_minutes": {
+          "type": "integer",
+          "minimum": 5,
+          "maximum": 240
+        },
+        "max_attempts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "success_definition": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["planned", "active", "retired", "archived"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "tool": {
+      "type": "object",
+      "required": [
+        "tool_id",
+        "tool_name",
+        "tool_category",
+        "interface",
+        "primary_user_segment",
+        "version_capture",
+        "pricing_capture",
+        "eligibility_status",
+        "notes"
+      ],
+      "properties": {
+        "tool_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "tool_name": {
+          "type": "string"
+        },
+        "tool_category": {
+          "type": "string"
+        },
+        "interface": {
+          "type": "string"
+        },
+        "primary_user_segment": {
+          "type": "string"
+        },
+        "version_capture": {
+          "type": "string"
+        },
+        "pricing_capture": {
+          "type": "string"
+        },
+        "eligibility_status": {
+          "type": "string",
+          "enum": ["candidate", "active", "excluded", "retired"]
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "score_weight": {
+      "type": "object",
+      "required": ["dimension", "description_tr", "weight_percent", "scale", "review_method"],
+      "properties": {
+        "dimension": {
+          "type": "string"
+        },
+        "description_tr": {
+          "type": "string"
+        },
+        "weight_percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "scale": {
+          "type": "string",
+          "const": "0-100"
+        },
+        "review_method": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "run": {
+      "type": "object",
+      "required": [
+        "run_id",
+        "task_id",
+        "tool_id",
+        "run_date",
+        "tool_version",
+        "model_or_plan",
+        "operator_id",
+        "environment_id",
+        "prompt_locale",
+        "prompt_sha256",
+        "fixture_sha256",
+        "started_at",
+        "completed_at",
+        "duration_seconds",
+        "cost_usd",
+        "tokens_input",
+        "tokens_output",
+        "attempts",
+        "transcript_uri",
+        "artifact_uri",
+        "status",
+        "notes"
+      ],
+      "properties": {
+        "run_id": {
+          "type": "string",
+          "pattern": "^RUN-2026-[0-9]{4}$"
+        },
+        "task_id": {
+          "type": "string"
+        },
+        "tool_id": {
+          "type": "string"
+        },
+        "run_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "tool_version": {
+          "type": "string"
+        },
+        "model_or_plan": {
+          "type": "string"
+        },
+        "operator_id": {
+          "type": "string"
+        },
+        "environment_id": {
+          "type": "string"
+        },
+        "prompt_locale": {
+          "type": "string",
+          "enum": ["tr", "en", "mixed"]
+        },
+        "prompt_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "fixture_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "started_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "completed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "duration_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "cost_usd": {
+          "type": "number",
+          "minimum": 0
+        },
+        "tokens_input": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tokens_output": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "attempts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "transcript_uri": {
+          "type": "string"
+        },
+        "artifact_uri": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["planned", "completed", "failed", "excluded", "audited"]
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "result": {
+      "type": "object",
+      "required": [
+        "result_id",
+        "run_id",
+        "task_id",
+        "tool_id",
+        "correctness_score",
+        "build_test_score",
+        "security_score",
+        "maintainability_score",
+        "ux_score",
+        "turkish_quality_score",
+        "autonomy_efficiency_score",
+        "weighted_total_score",
+        "rank_within_task",
+        "reviewer_count",
+        "inter_rater_agreement",
+        "pass_fail",
+        "citation_note",
+        "published",
+        "audited_at"
+      ],
+      "properties": {
+        "result_id": {
+          "type": "string",
+          "pattern": "^RES-2026-[0-9]{4}$"
+        },
+        "run_id": {
+          "type": "string"
+        },
+        "task_id": {
+          "type": "string"
+        },
+        "tool_id": {
+          "type": "string"
+        },
+        "correctness_score": {
+          "$ref": "#/$defs/score_0_100"
+        },
+        "build_test_score": {
+          "$ref": "#/$defs/score_0_100"
+        },
+        "security_score": {
+          "$ref": "#/$defs/score_0_100"
+        },
+        "maintainability_score": {
+          "$ref": "#/$defs/score_0_100"
+        },
+        "ux_score": {
+          "$ref": "#/$defs/score_0_100"
+        },
+        "turkish_quality_score": {
+          "$ref": "#/$defs/score_0_100"
+        },
+        "autonomy_efficiency_score": {
+          "$ref": "#/$defs/score_0_100"
+        },
+        "weighted_total_score": {
+          "$ref": "#/$defs/score_0_100"
+        },
+        "rank_within_task": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "reviewer_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "inter_rater_agreement": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "pass_fail": {
+          "type": "string",
+          "enum": ["pass", "partial", "fail"]
+        },
+        "citation_note": {
+          "type": "string"
+        },
+        "published": {
+          "type": "boolean"
+        },
+        "audited_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

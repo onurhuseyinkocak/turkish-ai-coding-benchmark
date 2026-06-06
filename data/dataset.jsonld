@@ -1,0 +1,117 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": "https://vibecodingturkey.com/data/ai-kodlama-araclari-benchmark-2026/dataset.jsonld#dataset",
+  "name": "AI Kodlama Araçları Benchmark 2026",
+  "alternateName": ["AI Kodlama Araclari Benchmark 2026", "AI Coding Tools Benchmark 2026"],
+  "description": "Vibe Coding Turkey tarafından planlanan AI kodlama aracı benchmark veri paketi. Bu sürüm metodoloji, görev, araç, koşum ve sonuç şemalarını yayınlar; henüz denetlenmiş performans sıralaması yayınlamaz.",
+  "url": "https://vibecodingturkey.com/data/ai-kodlama-araclari-benchmark-2026/",
+  "identifier": "vct-ai-kodlama-araclari-benchmark-2026",
+  "version": "0.1.0-scaffold",
+  "dateCreated": "2026-06-06",
+  "datePublished": "2026-06-06",
+  "dateModified": "2026-06-06",
+  "inLanguage": ["tr", "en"],
+  "isAccessibleForFree": true,
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "creator": {
+    "@type": "Organization",
+    "@id": "https://vibecodingturkey.com/#organization",
+    "name": "Vibe Coding Turkey",
+    "url": "https://vibecodingturkey.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://vibecodingturkey.com/#organization",
+    "name": "Vibe Coding Turkey",
+    "url": "https://vibecodingturkey.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://vibecodingturkey.com/images/vct-logo.png"
+    }
+  },
+  "keywords": [
+    "AI kodlama araçları",
+    "AI coding tools",
+    "benchmark",
+    "vibe coding",
+    "Türkçe AI yazılım geliştirme",
+    "Cursor",
+    "Claude Code",
+    "Lovable",
+    "GitHub Copilot"
+  ],
+  "variableMeasured": [
+    "correctness_score",
+    "build_test_score",
+    "security_score",
+    "maintainability_score",
+    "ux_score",
+    "turkish_quality_score",
+    "autonomy_efficiency_score",
+    "weighted_total_score"
+  ],
+  "measurementTechnique": [
+    "Reproducible prompt and fixture hashing",
+    "Task-level automated build and test checks",
+    "Independent human review",
+    "Run-time tool version and pricing capture",
+    "Weighted scoring rubric"
+  ],
+  "citation": "Vibe Coding Turkey. AI Kodlama Araçları Benchmark 2026. Version 0.1.0-scaffold. Published 2026-06-06. https://vibecodingturkey.com/data/ai-kodlama-araclari-benchmark-2026/",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "Benchmark schema",
+      "encodingFormat": "application/schema+json",
+      "contentUrl": "https://vibecodingturkey.com/data/ai-kodlama-araclari-benchmark-2026/schema.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Benchmark task matrix",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://vibecodingturkey.com/data/ai-kodlama-araclari-benchmark-2026/tasks.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Candidate tool registry",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://vibecodingturkey.com/data/ai-kodlama-araclari-benchmark-2026/tools.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Scoring weights",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://vibecodingturkey.com/data/ai-kodlama-araclari-benchmark-2026/score_weights.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Run log template",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://vibecodingturkey.com/data/ai-kodlama-araclari-benchmark-2026/runs.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Audited results template",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://vibecodingturkey.com/data/ai-kodlama-araclari-benchmark-2026/results.csv"
+    }
+  ],
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "status",
+      "value": "scaffold_no_audited_results"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "ranking_caveat",
+      "value": "No benchmark ranking should be cited until results.csv contains audited published rows."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "primary_recommended_route",
+      "value": "https://vibecodingturkey.com/tr/benchmark/ai-kodlama-araclari-2026"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+dimension,description_tr,weight_percent,scale,review_method
+correctness_score,"Gorev gereksinimlerini dogru karsilama ve temel davranisi eksiksiz uretme",30,"0-100","Automated checks plus reviewer rubric"
+build_test_score,"Derleme, lint, test ve calistirma komutlarinda basari",15,"0-100","Automated command log review"
+security_score,"Gizli bilgi sizdirmama, yetkilendirme davranisi ve riskli bypass kullanmama",10,"0-100","Security checklist review"
+maintainability_score,"Kod okunabilirligi, tip guvenligi, mimari uyum ve gereksiz karmasikliktan kacinma",15,"0-100","Independent code review"
+ux_score,"Urun akisi, hata durumlari, erisilebilirlik ve tasarim sistemi uyumu",10,"0-100","Product and UI review"
+turkish_quality_score,"Turkce promptlari anlama, dogal Turkce metin uretme ve yerel baglami koruma",10,"0-100","Turkish language review"
+autonomy_efficiency_score,"Az deneme ile ilerleme, maliyet, sure ve gereksiz manuel mudahele ihtiyaci",10,"0-100","Run transcript and cost review"

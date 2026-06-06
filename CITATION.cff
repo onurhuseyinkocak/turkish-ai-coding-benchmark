@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite it as below."
+type: dataset
+title: "Turkish AI Coding Benchmark"
+authors:
+  - family-names: "Kocak"
+    given-names: "Onur Huseyin"
+    affiliation: "Vibe Coding Turkey"
+version: "0.1.0-scaffold"
+date-released: "2026-06-06"
+url: "https://github.com/onurhuseyinkocak/turkish-ai-coding-benchmark"
+repository-code: "https://github.com/onurhuseyinkocak/turkish-ai-coding-benchmark"
+license: "CC-BY-4.0"
+keywords:
+  - vibe coding
+  - AI coding
+  - Turkish
+  - Claude Code
+  - Cursor
+  - Lovable
+  - Supabase
+  - Vercel
+abstract: "A reproducible Turkish/English benchmark for AI coding tools on real app-building tasks, maintained by Vibe Coding Turkey."

@@ -1,0 +1,1 @@
+result_id,run_id,task_id,tool_id,correctness_score,build_test_score,security_score,maintainability_score,ux_score,turkish_quality_score,autonomy_efficiency_score,weighted_total_score,rank_within_task,reviewer_count,inter_rater_agreement,pass_fail,citation_note,published,audited_at

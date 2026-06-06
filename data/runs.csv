@@ -1,0 +1,1 @@
+run_id,task_id,tool_id,run_date,tool_version,model_or_plan,operator_id,environment_id,prompt_locale,prompt_sha256,fixture_sha256,started_at,completed_at,duration_seconds,cost_usd,tokens_input,tokens_output,attempts,transcript_uri,artifact_uri,status,notes
